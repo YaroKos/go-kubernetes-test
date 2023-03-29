@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY . .
 
+RUN go mod init
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o api main.go
 
 FROM alpine:latest
